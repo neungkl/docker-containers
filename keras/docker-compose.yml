@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  keras:
+    # build: .
+    image: neungkl/keras
+    volumes:
+      - .:/home/work
+    ports:
+      - 8888:8888
+      - 6006:6006
