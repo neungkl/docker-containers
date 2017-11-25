@@ -1,7 +1,6 @@
 version: '3.3'
 services:
   keras:
-    # build: .
     image: neungkl/keras
     volumes:
       - .:/home/work

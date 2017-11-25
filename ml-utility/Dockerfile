@@ -3,15 +3,15 @@ FROM ubuntu:16.04
 LABEL maintainer="kosatelim@gmail.com"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        build-essential \
-        curl \
-        pkg-config \
-        python3 \
-        python-dev python3-dev \
-        rsync \
-        software-properties-common \
-        unzip \
-        && \
+    build-essential \
+    curl \
+    pkg-config \
+    python3 \
+    python-dev python3-dev \
+    rsync \
+    software-properties-common \
+    unzip \
+    && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -20,17 +20,17 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     rm get-pip.py
 
 RUN pip3 --no-cache-dir install \
-        Pillow \
-        h5py \
-        ipykernel \
-        jupyter \
-        matplotlib \
-        numpy \
-        pandas \
-        scipy \
-        sklearn \
-        seaborn \
-        && \
+    Pillow \
+    h5py \
+    ipykernel \
+    jupyter \
+    matplotlib \
+    numpy \
+    pandas \
+    scipy \
+    sklearn \
+    seaborn \
+    && \
     python3 -m ipykernel.kernelspec
 
 RUN unlink /usr/bin/python

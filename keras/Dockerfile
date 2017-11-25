@@ -1,8 +1,11 @@
 FROM tensorflow/tensorflow:latest-py3
 
-RUN pip3 install keras
-RUN pip3 install h5py
-RUN pip3 install seaborn
+RUN apt-get update
+
+RUN pip3 install keras h5py seaborn
 RUN pip3 install --upgrade jupyter
+
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /root/.cache/pip/
 
 WORKDIR /home/work
