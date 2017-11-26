@@ -2,6 +2,11 @@ FROM tensorflow/tensorflow:latest-py3
 
 RUN apt-get update
 
+RUN add-apt-repository ppa:george-edison55/cmake-3.x && \
+    apt-get install -y cmake && \
+    apt-get upgrade -y
+
+
 RUN pip3 install keras h5py seaborn
 RUN pip3 install --upgrade jupyter
 
